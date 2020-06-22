@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>calculator</title>
+</head>
+<style>
+*{
+	margin:0px;
+	padding:0px;}
+body{
+	height:100vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	background-image:url(bk.jpg);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	}
+.cal{
+	width:360px;
+	height:530px;
+	background-color:rgba(1,1,1,0.3);
+	border:8px groove gray;
+	
+	}
+input[type="text"]{
+	width:97%;
+	height:60px;
+	background-color:white;
+	position:relative;
+	left:5px;
+	top:20px;
+	font-size:40px;
+	text-align:right;}
+.btn{
+	width:97%;
+	height:325px;
+	background-color:rgba(1,1,1,0.3);
+	position:relative;
+	top:30px;
+	left:7px;
+	}
+input[type="button"]{
+	width:70px;
+	height:50px;
+	margin-top:20px;
+	margin-left:9px;
+	font-size:20px;
+	background-color:gray;;
+	color:white;
+	border:0px;
+	border:1px solid black;
+	outline:none;
+	border-radius:50px;
+	}
+</style>
+<script>
+var btn='';
+//var btn1='';
+
+function on(){
+	btn=document.getElementById("on").value;
+	document.getElementById("txt").value=0;
+	}
+function del(){
+	btn=document.getElementById("del").value;
+	document.getElementById("txt").value='';
+	}
+
+function per(){
+   btn=document.getElementById("txt").value;
+   var btn1=eval(btn);
+   document.getElementById("txt").value=btn1*100;
+
+	}
+function exp(){
+	
+	//btn=document.getElementById("exp").value;
+	btn=document.getElementById("txt").value;
+	document.getElementById("txt").value=Math.pow(btn,2);
+}
+function sn(){
+	btn=document.getElementById("txt").value;
+	document.getElementById("txt").value=Math.sin(btn);
+	}
+function cs(){
+	btn=document.getElementById("txt").value;
+	document.getElementById("txt").value=Math.cos(btn);
+	}
+function tn(){
+	btn=document.getElementById("txt").value;
+	document.getElementById("txt").value=Math.tan(btn);
+	}
+function sq(){
+	btn=document.getElementById("txt").value;
+	document.getElementById("txt").value=Math.sqrt(btn);
+}
+function one(){
+	btn=document.getElementById("one1").value;
+	document.getElementById("txt").value+=btn;
+	}
+function two(){
+	btn=document.getElementById("two2").value;
+	document.getElementById("txt").value+=btn;
+	}
+function three(){
+	btn=document.getElementById("th3").value;
+	document.getElementById("txt").value+=btn;
+	}
+function four(){
+	 btn=document.getElementById("fr4").value;
+	document.getElementById("txt").value+=btn;
+	}	
+function five(){
+	btn=document.getElementById("fv5").value;
+	document.getElementById("txt").value+=btn;
+	}
+function six(){
+	btn=document.getElementById("sx6").value;
+	document.getElementById("txt").value+=btn;
+	}
+function svn(){
+	btn=document.getElementById("svn7").value;
+	document.getElementById("txt").value+=btn;
+	}
+function egt(){
+	btn=document.getElementById("egt8").value;
+	document.getElementById("txt").value+=btn;
+	}
+function nine(){
+	btn=document.getElementById("nin9").value;
+	document.getElementById("txt").value+=btn;
+	}
+function zero(){
+	btn=document.getElementById("zr0").value;
+	document.getElementById("txt").value+=btn;
+	}
+function pnt(){
+	btn=document.getElementById("dot").value;
+	document.getElementById("txt").value+=btn;
+	}
+function plus(){
+	btn=document.getElementById("pls").value;
+	document.getElementById("txt").value+=btn;
+	//res=btn+btn;
+	}
+function minus(){
+	 btn=document.getElementById("min").value;
+	document.getElementById("txt").value+=btn;
+	}
+function div(){
+	 btn=document.getElementById("dvd").value;
+	document.getElementById("txt").value+=btn;
+	}
+function mul(){
+    btn=document.getElementById("mul").value;
+	document.getElementById("txt").value+=btn;
+	}
+function eq(){
+	var res=document.getElementById("txt").value;
+	document.getElementById("txt").value=eval(res);
+		
+	}
+</script>
+<body>
+
+    <div class="cal">
+    <input type="text" id="txt">
+    <div class="btn">
+    <input  type="button" value="C" onClick="on()" id="on">
+    <input type="button" value="%" onClick="per()" id="per">
+    <input type="button" value="X^2" onClick="exp()" id="exp">
+    <input  type="button" value="DEL" onClick="del()" id="del">
+    <input  type="button" value="Sin" onClick="sn()" id="sn">
+    <input type="button" value="Cos" onClick="cs()" id="cs">
+    <input type="button" value="Tan" onClick="tn()" id="tn">
+    <input  type="button" value="sqrt" onClick="sq()" id="sq">
+    <input  type="button" value="1" onClick="one()" id="one1">
+    <input type="button" value="2" onClick="two()" id="two2">
+    <input type="button" value="3" onClick="three()" id="th3">
+    <input type="button" value='+' onClick="plus()" id="pls">
+    <input type="button" value="4" onClick=" four()" id="fr4">
+    <input type="button" value="5" onClick="five()" id="fv5">
+    <input type="button" value="6" onClick="six()" id="sx6">
+    <input type="button" value='-' onClick="minus()" id="min">
+    <input type="button" value="7" onClick="svn()" id="svn7">
+    <input type="button" value="8" onClick="egt()" id="egt8">
+    <input type="button" value="9" onClick="nine()" id="nin9">
+    <input type="button" value='*' onClick="mul()" id="mul">
+    <input type="button" value="0" onClick="zero()" id="zr0">
+    <input type="button" value="." onClick="pnt()" id="dot">
+    <input type="button" value="=" onClick="eq()" >
+    <input type="button" value='/' onClick="div()" id="dvd">
+    </div>
+    
+    </div>
+</body>
+</html>
